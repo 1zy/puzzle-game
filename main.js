@@ -65,7 +65,7 @@ function init(){
   time=0//时间初始化为0
   updatePic()//图片更新
 	}
-function updatePic(){
+function updatePic(dataRan){
     $('.pic-cell').remove();//初始化
  	var dataRan=getPicNumber();//随机图片数组
 	 for(var i=0;i<3;i++)
@@ -115,16 +115,17 @@ document.addEventListener('touchend',function(event){
 		return
 		}
 	  if(Math.abs(deltax)>=Math.abs(deltay)&&starty>y){
+		 
 		 if(deltax<0){
 			if(moveLeft())
-			    setTimeout('moveL(startx)',210)
+			    moveL(startx)
 				setTimeout('isWin(board)',300)
 				
 				
 		 }
 		 else{
 			 if(moveRight())
-				setTimeout('moveR(startx)',210)
+				moveR(startx)
 				setTimeout('isWin(board)',300)
 			 }
 		
@@ -133,13 +134,13 @@ document.addEventListener('touchend',function(event){
 		if(deltay<0){
 			if(moveUp())
 			   console.log('a')
-			   setTimeout('moveU(starty)',210)
+			   moveU(starty)
 			   setTimeout('isWin(board)',300)
 			
 			}
 		else{
 			if(moveDown())
-			   setTimeout('moveD(starty)',210)
+			    moveD(starty)
 			   setTimeout('isWin(board)',300);
 			}
 	  }
@@ -239,7 +240,7 @@ function moveU(starty){
 	      if(board[i][j]!=0){
 			  for(var k=0;k<i;k++){
 				  if(board[k][j]==0){ 
-					   if(k==0&&starty<0.7*documentHeight){
+					   if(k==0&&starty<0.6*documentHeight){
 							 var h=k+1
 							 var picCellBlank=document.getElementById('pic-cell-'+k+'-'+j);
 							 var picCellMoveLeft=document.getElementById('pic-cell-'+h+'-'+j);
@@ -250,7 +251,7 @@ function moveU(starty){
 							 board[k][j]=board[h][j]
 							 board[h][j]=0
 						   }
-						else if(starty>0.7*documentHeight){
+						else if(starty>0.6*documentHeight){
 							 console.log('a')
 							 var picCellBlank=document.getElementById('pic-cell-'+k+'-'+j);
 							 var picCellMoveLeft=document.getElementById('pic-cell-'+i+'-'+j);
@@ -280,7 +281,7 @@ function moveD(starty){
 		   if(board[i][j]!=0){
 			   for(var k=2;k>i;k--){
 				   if(board[k][j]==0){
-					  if(k==2&&starty>0.7*documentHeight){
+					  if(k==2&&starty>0.4*documentHeight){
 						  var h=k-1
 						  var picCellBlank=document.getElementById('pic-cell-'+k+'-'+j);
 						  var picCellMoveRight=document.getElementById('pic-cell-'+h+'-'+j);
@@ -291,7 +292,7 @@ function moveD(starty){
 						  board[k][j]=board[h][j]
 						  board[h][j]=0
 						  }
-					   else if(starty<0.7*documentHeight){
+					   else if(starty<0.4*documentHeight){
 						  var h=k-1
 						  var picCellBlank=document.getElementById('pic-cell-'+k+'-'+j);
 					      var picCellMoveRight=document.getElementById('pic-cell-'+h+'-'+j);
