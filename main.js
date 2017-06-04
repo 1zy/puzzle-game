@@ -63,12 +63,11 @@ function init(){
 		 }
 }
   time=0//时间初始化为0
-  var num=[[1,2,3],[4,5,6],[7,0,8]]
-  updatePic(num)//图片更新
+  updatePic()//图片更新
 	}
-function updatePic(dataRan){
+function updatePic(){
     $('.pic-cell').remove();//初始化
-//	var dataRan=getPicNumber();//随机图片数组
+ 	var dataRan=getPicNumber();//随机图片数组
 	 for(var i=0;i<3;i++)
 		for(var j=0;j<3;j++){
 			$('#grid-container').append('<div class="pic-cell" id="pic-cell-'+i+'-'+j+'"></div>')
