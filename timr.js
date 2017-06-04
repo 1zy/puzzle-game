@@ -7,3 +7,4 @@ function timeCount(){
 }
 
 timeCount()
+var timeRun=setInterval('timeCount()',1000)

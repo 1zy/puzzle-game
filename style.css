@@ -62,3 +62,23 @@ header h1{
 	margin:10px;
 	background:#0CF;
 	}
+#win{
+	display:none;
+	width:40%;
+	text-align:center;
+	font-size:100px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	position:absolute;
+	z-index:1000;
+	top:40%;
+	left:27%;
+	color:#FFFF80;
+	animation: win 1.5s ease;
+	}
+@keyframes win{
+	0%{ transform:scale(0.5) 
+	     },
+	100%{transform:scale(2) 
+	    }
+	}

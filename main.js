@@ -13,7 +13,7 @@ start.addEventListener('click',function(event){
 	})
 $(document).ready(function() {
     newGame();
-	setInterval('timeCount()',1000)
+	timeRun
 	});
 function newGame(){
 	preparFobileMobile()
@@ -63,11 +63,12 @@ function init(){
 		 }
 }
   time=0//时间初始化为0
-  updatePic()//图片更新
+  var num=[[1,2,3],[4,5,6],[7,0,8]]
+  updatePic(num)//图片更新
 	}
-function updatePic(){
+function updatePic(dataRan){
     $('.pic-cell').remove();//初始化
-	var dataRan=getPicNumber();//随机图片数组
+//	var dataRan=getPicNumber();//随机图片数组
 	 for(var i=0;i<3;i++)
 		for(var j=0;j<3;j++){
 			$('#grid-container').append('<div class="pic-cell" id="pic-cell-'+i+'-'+j+'"></div>')
@@ -311,6 +312,8 @@ function moveD(starty){
 function isWin(board){
 	var winNum=[[1,2,3],[4,5,6],[7,8,0]]
     if(board.toString()==winNum.toString()){
-		alert('win')
+		var win=document.getElementById('win');
+		win.style.display='block';
+		clearInterval(timeRun)
 		}
 	}
