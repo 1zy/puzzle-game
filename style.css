@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:url(images/bg.jpg);
+	background-size:cover;
+	color:#fff;
+
+}
+
+/*header*/
+header{
+	margin:50px auto;
+	text-align:center;
+	font-family:"微软雅黑";
+	margin-bottom:30px;
+}
+header h1{
+	margin-bottom:20px;
+	font-size:40px;
+}
+.start{
+	padding:10px 20px;
+    background:#000;
+	border-radius:10px;
+	display:inline-block;
+    opacity:0.6;	
+}
+.start span{
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+	opacity:1
+	}
+.time{
+	display:inline-block;
+	width:150px;
+	font-size:20px;
+}
+/*格子部分*/
+.grid-container{
+	background:#fff;
+	margin:0 auto;
+	position:relative;
+	
+}
+.grid-cell{
+	width:120px;
+	height:120px;
+	background:#999;
+	display:inline-block;
+	margin:10px;
+	position:absolute;
+}
+.pic-cell{
+	background-size:cover;
+	display:inline-block;
+	position:absolute;
+	margin:10px;
+	background:#0CF;
+	}
